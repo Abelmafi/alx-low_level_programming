@@ -24,9 +24,7 @@ int main(void)
 				for (z = a; z <= '9'; z++)
 				{
 					if (y == '0' && z == '0')
-					{
-						continue;
-					}
+					{continue;	}
 					else
 					{
 					putchar (x);
@@ -35,10 +33,11 @@ int main(void)
 					putchar (y);
 					putchar (z);
 					if (w == '8')
-						continue;
+					{continue;	}
 					else
+					{
 						putchar (',');
-						putchar (' ');
+						putchar (' '); }
 					}
 				}
 			}
