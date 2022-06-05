@@ -15,8 +15,16 @@ int main(void)
 		{
 			for (y = x; y <= '9'; y++)
 			{
-				int a = w + 1;
+				int a;
 
+				if (w == '0')
+				{
+					a = '0';
+				}
+				else
+				{
+					a = w + 1;
+				}
 				for (z = a; z <= '9'; z++)
 				{
 					putchar (x);
