@@ -17,7 +17,7 @@ int main(void)
 			{
 				int a;
 
-				if (w == '0')
+				if (x == '0')
 				{a = '0';	}
 				else
 				{a = w + 1;	}
