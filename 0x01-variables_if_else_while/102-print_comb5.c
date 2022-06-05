@@ -18,9 +18,9 @@ int main(void)
 				int a;
 
 				if (w == '0')
-					a = '0';
+				{a = '0';	}
 				else
-					a = w + 1;
+				{a = w + 1;	}
 				for (z = a; z <= '9'; z++)
 				{
 					if (y == '0' && z == '0')
