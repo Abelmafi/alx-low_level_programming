@@ -27,7 +27,7 @@ int main(void)
 					putchar (' ');
 					putchar (y);
 					putchar (z);
-					if (w == '8')
+					if (x == '9' && w == '8')
 					{continue;	}
 					else
 					{
