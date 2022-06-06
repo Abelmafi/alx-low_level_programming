@@ -7,21 +7,17 @@
  */
 int main(void)
 {
-	int w, x, y, z, a = '1';
+	int w, x, y, z, a = '1', b = '0';
 
 	for (x = '0'; x <= '9'; x++)
 	{
 		for (w = '0'; w <= '9'; w++)
 		{
-			for (y = x; y <= '9'; y++)
+			for (y = b; y <= '9'; y++)
 			{
 				for (z = a; z <= '9'; z++)
 				{
 					a = '0';
-					if (y == '0' && z == '0')
-					{continue;	}
-					else
-					{
 					putchar (x);
 					putchar (w);
 					putchar (' ');
@@ -32,11 +28,19 @@ int main(void)
 					else
 					{
 						putchar (',');
-						putchar (' '); }
+						putchar (' ');
 					}
 				}
 			}
-			a = w + 2;
+			if (w == '8')
+			{a = '0';
+			b = x + 1;	}
+			else if (w == '9')
+			{b = x + 1;
+			a = '1';	}
+			else
+			{a = w + 2;
+			b = x;	}
 		}
 	}
 	putchar ('\n');
