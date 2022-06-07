@@ -3,7 +3,7 @@
 /**
  *print_sign - prints the sign
  *
- *@c: is intiger
+ *@n: is intiger
  *
  *Returns: nothing
  *
