@@ -11,19 +11,15 @@ int print_last_digit(int b)
 {
 	int r;
 
-	if (b < 0)
-	{
-		b = b * -1;
-		r = b % 10;
-	}
-	else if (b > 0)
+	if (b >= 0)
 	{
 		r = b % 10;
 	}
-	else
+	else 
 	{
-		r = 0;
+		b = -1 * b;
+		r = b % 10;
 	}
-	_putchar('r');
+	_putchar('0' + r);
 	return (r);
 }
