@@ -3,7 +3,8 @@
 
 /**
  * add - check the code
- *
+ * @a: intiger
+ * @b: intiger
  * Return: Always 0.
  */
 int add(int a, int b)
