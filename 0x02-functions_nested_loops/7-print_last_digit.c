@@ -3,7 +3,7 @@
 /**
  * print_last_digit - check the code
  *
- *@b: absolute value
+ * @a: absolute value
  *
  * Return: Always 0.
  */
