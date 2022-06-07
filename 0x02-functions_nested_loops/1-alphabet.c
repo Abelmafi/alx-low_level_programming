@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <unistd.h>
 #include "main.h"
-
 /**
  * main - check the code
  *
@@ -17,5 +15,6 @@ int print_alphabet(void)
 		a++;
 	}
 	_putchar('\n');
+	return (0);
 }
 
