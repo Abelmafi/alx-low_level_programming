@@ -5,7 +5,7 @@
  *
  * @n: is intiger
  *
- * Returns: nothing
+ * Return: answer
  *
  */
 int print_sign(int n)
