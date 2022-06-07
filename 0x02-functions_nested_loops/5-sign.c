@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_sign - prints the sign of number
+ * print_sign - prints the sign of number.
  *
  * @n: is intiger
  *
