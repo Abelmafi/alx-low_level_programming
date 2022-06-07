@@ -24,6 +24,6 @@ int print_last_digit(int b)
 	{
 		r = 0;
 	}
-	_putchar(r);
+	_putchar('r');
 	return (r);
 }
