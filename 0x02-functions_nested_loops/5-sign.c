@@ -1,31 +1,28 @@
 #include <stdio.h>
 #include "main.h"
 /**
- *print_sign - prints the sign
+ * print_sign - prints the sign of number.
  *
- *@c: is intiger
+ * @n: is intiger
  *
- *Returns: nothing
+ * Return: answer
  *
  */
 int print_sign(int n)
 {
-	char a;
 	if (n > 0)
 	{
+		_putchar('+');
 		return (1);
-		a = '+';
-	        putchar(a);
 	}
 	else if (n < 0)
 	{
+		_putchar('-');
 		return (-1);
-		a = '-';
-		_putchar(a);
 	}
 	else
 	{
+		_putchar('0');
 		return (0);
-		putchar('0');
 	}
 }
