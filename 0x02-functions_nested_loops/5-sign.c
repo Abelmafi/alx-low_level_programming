@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "main.h"
 /**
- *print_sign - prints the sign
+ * print_sign - prints the sign of number
  *
- *@n: is intiger
+ * @n: is intiger
  *
- *Returns: nothing
+ * Returns: nothing
  *
  */
 int print_sign(int n)
