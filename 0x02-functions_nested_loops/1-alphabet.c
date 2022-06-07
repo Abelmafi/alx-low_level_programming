@@ -1,11 +1,13 @@
 #include <stdio.h>
-#include "main.h"
+#include "main.h
+"
 /**
- * main - check the code
+ *print_alphabet - prints the alphabet
  *
- * Return: Always 0.
+ *Returns: nothing
+ *
  */
-int print_alphabet(void)
+void print_alphabet(void)
 {
 	char a = 'a';
 
@@ -15,6 +17,5 @@ int print_alphabet(void)
 		a++;
 	}
 	_putchar('\n');
-	return (0);
 }
 
