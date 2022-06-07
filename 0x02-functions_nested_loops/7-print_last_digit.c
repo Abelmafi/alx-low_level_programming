@@ -3,26 +3,21 @@
 /**
  * print_last_digit - check the code
  *
- *@b: absolute value
+ * @a: absolute value
  *
  * Return: Always 0.
  */
-int print_last_digit(int b)
+int print_last_digit(int a)
 {
-	int r;
-
-	if (b < 0)
+	if ((a % 10) >= 0)
 	{
-		b = b * -1;
-		r = b % 10;
-	}
-	else if (b > 0)
-	{
-		r = b % 10;
+		_putchar('0' + (a % 10));
+		return (a % 10);
 	}
 	else
 	{
-		r = 0;
+		_putchar('0' + (-1 * (a % 10)));
+		return ((-1 * (a % 10)));
 	}
-	return (rr);
 }
+
