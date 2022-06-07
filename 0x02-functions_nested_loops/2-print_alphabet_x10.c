@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_alphabet - print_alphabet
+ * print_alphabet_x10 - print_alphabet
  *
  * Return: nething
  */
