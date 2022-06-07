@@ -24,5 +24,5 @@ int print_last_digit(int b)
 	{
 		r = 0;
 	}
-	return (r);
+	return (rr);
 }
