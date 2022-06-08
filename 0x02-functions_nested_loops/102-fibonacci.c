@@ -8,12 +8,14 @@
 int main(void)
 {
 	int i;
-	int t1 = 1, t2 = 2;
-	int nextTerm = t1 + t2;
+	long long int t1 = 1, t2 = 2;
+	long long int nextTerm = t1 + t2;
 
+
+	printf("%lld, %lld, ", t1, t2);
 	for (i = 3; i <= 50; ++i)
 	{
-		printf("%d, ", nextTerm);
+		printf("%lld, ", nextTerm);
 		t1 = t2;
 		t2 = nextTerm;
 		nextTerm = t1 + t2;
