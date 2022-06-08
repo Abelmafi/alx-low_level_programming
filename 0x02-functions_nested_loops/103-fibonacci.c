@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i;
-	long int t1 = 1, t2 = 2, a = 0;
+	long int t1 = 1, t2 = 2, a = 0, c = 0;
 	long int nextTerm = t1 + t2;
 
 	for (i = 0; i < 50; i++)
@@ -30,6 +30,7 @@ int main(void)
 		t2 = nextTerm;
 		nextTerm = t1 + t2;
 	}
-	printf("%ld\n", a);
+	c = a + 2;
+	printf("%ld\n", c);
 	return (0);
 }
