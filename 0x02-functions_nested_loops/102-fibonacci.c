@@ -15,10 +15,17 @@ int main(void)
 	printf("%ld, %ld, ", t1, t2);
 	for (i = 3; i <= 50; ++i)
 	{
-		printf("%ld, ", nextTerm);
-		t1 = t2;
-		t2 = nextTerm;
-		nextTerm = t1 + t2;
+		if (i == 50)
+		{
+			printf("%ld", nextTerm);
+		}
+		else
+		{	
+			printf("%ld, ", nextTerm);
+			t1 = t2;
+			t2 = nextTerm;
+			nextTerm = t1 + t2;
+		}
 	}
 	return (0);
 }
