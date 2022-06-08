@@ -17,7 +17,7 @@ int main(void)
 	{
 		if (i == 50)
 		{
-			printf("%ld", nextTerm);
+			printf("%ld ", nextTerm);
 		}
 		else
 		{	
