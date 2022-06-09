@@ -1,11 +1,10 @@
-#include <stdlib.h>
-#include <time.h>
 #include "main.h"
 /**
- *  * main - Entry point
- *   *
- *    * Return: Always 0 (Success)
- *     *
+ * main - Entry point
+ * 
+ * @i: intiger
+ *
+ * Return: Always 0 (Success)    
  */
 void positive_or_negative(int i)
 {
