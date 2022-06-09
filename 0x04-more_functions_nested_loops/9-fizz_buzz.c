@@ -5,11 +5,11 @@
  *
  * Return: Always 0.
  */
-void main(void)
+int main(void)
 {
 	int a, b, i, j;
 
-	for (i = 1; i <= 100; i++)
+	for (i = 1; i < 100; i++)
 	{
 		a = i % 3;
 		b = i % 5;
@@ -31,4 +31,6 @@ void main(void)
 			printf("%d ", i);
 		}
 	}
+	printf("Buzz");
+	printf('\n');
 }
