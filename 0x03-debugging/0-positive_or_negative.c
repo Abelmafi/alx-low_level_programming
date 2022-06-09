@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - Entry point
+ * positive_or_negative - Entry point
  * 
  * @i: intiger
  *
