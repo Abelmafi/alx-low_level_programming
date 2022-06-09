@@ -21,6 +21,6 @@ void more_numbers(void)
 			else
 				_putchar('0' + j);
 		}
-		printf('\n');
+		_putchar('\n');
 	}
 }
