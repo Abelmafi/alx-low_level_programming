@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * more_numbers - print_numbers
@@ -21,6 +22,6 @@ void more_numbers(void)
 			else
 				_putchar('0' + j);
 		}
-		_putchar('\n');
+		putchar('\n');
 	}
 }
