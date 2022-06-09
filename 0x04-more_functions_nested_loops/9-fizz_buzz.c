@@ -1,37 +1,29 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * main - print squire
+ * main - starting function
  *
- * Return: Always 0.
+ * Return: return vaue
+ *
  */
+
 int main(void)
 {
-	int a, b, i, j;
+	int i;
 
 	for (i = 1; i < 100; i++)
 	{
-		a = i % 3;
-		b = i % 5;
-
-		if (a == 0 && b == 0)
-		{
+		if ((i % 3) == 0 && (i % 5) == 0)
 			printf("FizzBuzz ");
-		}
-		else if (a == 0)
-		{
+		else if ((i % 3) == 0)
 			printf("Fizz ");
-		}
-		else if (b == 0)
-		{
+		else if ((i % 5) == 0)
 			printf("Buzz ");
-		}
 		else
-		{
 			printf("%d ", i);
-		}
 	}
 	printf("Buzz");
-	printf('\n');
+	printf("\n");
 	return (0);
 }
