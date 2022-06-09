@@ -4,7 +4,7 @@
  * 
  * @i: intiger
  *
- * Return: Always 0 (Success)    
+ * Return: Always 0    
  */
 void positive_or_negative(int i)
 {
