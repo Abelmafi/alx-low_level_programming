@@ -2,25 +2,21 @@
 #include <unistd.h>
 
 /**
- * more_numbers - print_numbers
+ * more_numbers - starting function
  *
- * Return: Always 0.
  */
 void more_numbers(void)
 {
-	int i, j;
+	int i;
+	int j;
 
-	for (i = 0; i <= 9; i++)
+	for (i = 0; i < 10; i++)
 	{
-		for (j = 0; j <= 14; j++)
+		for (j = 0; j < 15; j++)
 		{
-			if (j > 9)
-			{
+			if ((j / 10) > 0)
 				_putchar('0' + (j / 10));
-				_putchar('0' + (j % 10));
-			}
-			else
-				_putchar('0' + j);
+			_putchar('0' + (j % 10));
 		}
 		putchar('\n');
 	}
