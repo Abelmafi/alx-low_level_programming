@@ -12,7 +12,7 @@ void print_array(int *a, int n)
 
 	j = n - 1;
 	i = 0;
-	if (n < 0)
+	if (n <= 0)
 	{}
 	else
 	{
