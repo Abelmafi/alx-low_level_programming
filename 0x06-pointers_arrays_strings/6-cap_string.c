@@ -13,19 +13,20 @@ char *cap_string(char *str)
 
 	while (str[j])
 	{
-		if (str[j] == '\n' || str[j] == '\t' || str[j] == ' ' || str[j] == ',')
+		if (str[j] == '\n' || str[j] == ';' || str[j] == ' ' || str[j] == ',')
 			{
 			if (str[j + 1] >= 'a' && str[j + 1] <= 'z')
 			{
 				str[j + 1] -= 'a' - 'A';
 			}
 			}
-		else if (str[j] == ';')
+		else if (str[j] == '\t')
 			{
 			if (str[j + 1] >= 'a' && str[j + 1] <= 'z')
 			{
 				str[j + 1] -= 'a' - 'A';
 			}
+			str[j] = ' ';
 			}
 		else if (str[j] == '.' || str[j] == '!' || str[j] == '?' || str[j] == '"')
 			{
