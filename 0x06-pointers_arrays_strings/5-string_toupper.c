@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <ctype.h>
 
 /**
  * string_toupper - check the code
@@ -15,7 +14,7 @@ char *string_toupper(char *str)
 	{
 		if ((str[j] >= 'a') && (str[j] <= 'z'))
 		{
-		str[j] -= 'a' - 'A';
+		str[j] -= 97 - 65;
 		}
 		j++;
 	}
