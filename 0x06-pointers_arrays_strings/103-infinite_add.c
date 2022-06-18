@@ -19,6 +19,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int size;
 
 	size = ((a >= b) ? a : b);
+	if ( ! *n1 && ! *n2 )
+	{
+		return 0;
+	}
 	if ((a + 2) > size_r || (b + 2) > size_r)
 	{
 		return (0);
@@ -34,12 +38,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 			if (n > 9)
 			{
-				r[size] = (char)(m  + '0');
+				r[size - 1] = (char)(m  + '0');
 				l = 1;
 			}
 			else
 			{
-				r[size] = (char)(n + '0');
+				r[size - 1] = (char)(n + '0');
 				l = 0;
 			}
 			size--;
