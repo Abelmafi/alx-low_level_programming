@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * _strchr - prints buffer
@@ -18,6 +19,7 @@ char *_strchr(char *s, char c)
 			break;
 		}
 		i++;
+		*s++;
 	}
 	if (j == 1)
 		return (s + i);
