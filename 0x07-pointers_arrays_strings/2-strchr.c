@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "main.h"
 /**
  * _strchr - prints buffer
  * @c: char to be printed
@@ -12,13 +12,12 @@ char *_strchr(char *s, char c)
 
 	while (*s)
 	{
-		if (*s == c)
+		if (*(s + i) == c)
 		{
 			j = 1;
 			break;
 		}
 		i++;
-		*s++;
 	}
 	if (j == 1)
 		return (s + i);
