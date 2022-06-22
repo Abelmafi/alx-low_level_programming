@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "main.h"
 /**
  * _strchr - prints buffer
  * @c: char to be printed
