@@ -9,10 +9,8 @@
 int check(int i, int num)
 {
 
-	if (num % i == 0 || num < 2)
+	if ((num % i == 0 && i < num) || num < 2)
 		return (0);
-	if (i == num - 1)
-		return (1);
 	if (num > i)
 		return (check(i + 1, num));
 	return (1);
