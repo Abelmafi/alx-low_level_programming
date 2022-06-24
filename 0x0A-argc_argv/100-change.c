@@ -6,19 +6,18 @@
  * @argv: argument variable
  * Return: zero
  */
-
 int main(int argc, char *argv[])
 {
 	int sum = 0;
 	int c = atoi(argv[1]);
 
-	if (argc > 2)
+	if (argc > 2 || argc == 1)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (c <= 0)
-	{	printf("0\n");}
+	if (c < 0)
+	{	printf("0\n");	}
 	while (c != 0)
 	{
 	if (c >= 25)
