@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	if (c < 0)
-		prontf("0\n");
+		printf("0\n");
 	while (c != 0)
 	{
 	if (c >= 25)
