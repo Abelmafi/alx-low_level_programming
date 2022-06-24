@@ -21,13 +21,15 @@ int main(int argc, char *argv[])
 		{
 			printf("Error\n");
 			c = 1;
-			return (1);
 			break;
 		}
 		sum += atoi(argv[i]);
 	}
 	if (c == 0)
+	{
 		printf("%d\n", sum);
-
-	return (0);
+		return (0);
+	}
+	else 
+		return (1);
 }
