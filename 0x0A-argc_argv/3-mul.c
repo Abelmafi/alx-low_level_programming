@@ -22,4 +22,5 @@ int main(int argc, char *argv[])
 		j = atoi(argv[1]) * atoi(argv[2]);
 		printf("%d\n", j);
 	}
+	return (0);
 }
