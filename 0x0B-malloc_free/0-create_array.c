@@ -1,0 +1,30 @@
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * create_array - create array
+ * @size: size of memory to print
+ * @c: char to print
+ *
+ * Return: Nothing.
+ */
+char *create_array(unsigned int size, char c)
+{
+	char *s;
+	int i;
+
+	i = 0;
+	s = malloc((size + 1) * sizeof(c));
+	if (s == 0)
+	{
+		return (NULL);
+	}
+	while (*s)
+	{
+		s[i] = c;
+		i++;
+	}
+	return (s);
+
+}
