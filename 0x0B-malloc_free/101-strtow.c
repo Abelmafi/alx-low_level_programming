@@ -43,7 +43,7 @@ char **strtow(char *str)
 
 	raw = counter(str);
 	s = (char **)malloc(sizeof(char *) * raw);
-	if (s == NULL || str == NULL || str == "")
+	if (s == NULL || str == NULL)
 	{	return (NULL);
 		free(s);
 	}
