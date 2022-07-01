@@ -10,8 +10,8 @@ void *malloc_checked(unsigned int b)
 {
 	int *s;
 
-	s = (int *)malloc(sizeof(unsigned int) * b);
-	if (s == NULL || b == NULL)
+	s = (int *)malloc(b);
+	if (s == NULL)
 		exit(98);
 	return (s);
 }
