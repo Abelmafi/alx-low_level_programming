@@ -3,22 +3,22 @@
 #include <stdlib.h>
 /**
  * _memset - allocates memory for an array, using malloc.
- * @s: string argument.
+ * @c: string argument.
  * @b: size of argument.
- * @n: intn
+ * @n: intn.
  *
  * Return: return pointer
  */
 
-char *_memset(char *s, char b, unsigned int n)
+char *_memset(char *c, char b, unsigned int n)
 {
 	unsigned int i;
 
 	for (i = 0; i < n; i++)
 	{
-		s[i] = b;
+		c[i] = b;
 	}
-	return (s);
+	return (c);
 }
 /**
  * _calloc - allocates memory for an array, using malloc.
