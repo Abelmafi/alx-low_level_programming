@@ -30,10 +30,9 @@ char *_memset(char *s, char b, unsigned int n)
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *s;
-	unsigned int i = 0;
 
 	s = malloc(nmemb * size);
-	if (s == NULL || nmemb == 0 || size == 0)
+	if (s == NULL || size == 0)
 		return (NULL);
 	_memset(s, 0, (nmemb * size));
 	return (s);
