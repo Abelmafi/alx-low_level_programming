@@ -30,15 +30,23 @@ char *_memset(char *b, char *c, unsigned int n)
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *s;
-	unsigned int size;
+	char *s;
+	unsigned int size, i;
 
 	(old_size < new_size) ? (size = old_size) : (size = new_size);
 	printf("%d\n", size);
 	if (old_size == new_size)
 		return (ptr);
 	if (new_size == 0 && ptr != NULL)
+	{
+		free(ptr);
 		return (NULL);
+	}
+	if (ptr == NULL)
+	{
+		s = malloc(new_size);
+		return (s);
+	}
 	s = malloc(new_size);
 	_memset(s, ptr, size);
 	free(ptr);
