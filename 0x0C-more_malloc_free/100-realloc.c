@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _memset - allocates memory for an array, using malloc.
  * @c: new array.
@@ -8,13 +9,15 @@
  *
  * Return: return pointer
  */
-char *_memset(char *c, char *b, unsigned int n)
+char *_memset(char *b, char *c, unsigned int n)
 {
-	unsigned int i = 0;
+	unsigned int i;
 
 	for (i = 0; i < n; i++)
-		c[i] = b[i];
-	return (c);
+	{
+		b[i] = c[i];
+	}
+	return (b);
 }
 
 /**
@@ -31,11 +34,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	unsigned int size;
 
 	(old_size < new_size) ? (size = old_size) : (size = new_size);
+	printf("%d\n", size);
 	if (old_size == new_size)
 		return (ptr);
 	if (new_size == 0 && ptr != NULL)
 		return (NULL);
 	s = malloc(new_size);
 	_memset(s, ptr, size);
+	free(ptr);
 	return (s);
 }
