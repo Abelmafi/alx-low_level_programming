@@ -31,7 +31,7 @@ char *_memset(char *b, char *c, unsigned int n)
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *s;
-	unsigned int size, i;
+	unsigned int size;
 
 	(old_size < new_size) ? (size = old_size) : (size = new_size);
 	printf("%d\n", size);
