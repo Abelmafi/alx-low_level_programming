@@ -12,8 +12,9 @@ int main(void)
 	a = __FILE__;
 	while (*a)
 	{
-		putchar(*a);
+		putchar (*a);
 		a++;
 	}
+	putchar ('\n');
 	return (0);
 }
