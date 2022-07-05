@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
 	for (i = 0; i < len1; i++)
 		ss[i] = (int *)malloc((len2 + 1) * sizeof(int));
 	rowmultiply(ss, len1, len2, m, n);
-	mul = (int *)malloc(sizeof(int) * (len1 + len2 + 1));
+	mul = (int *)malloc(sizeof(int) * (len1 + len2));
 	rowsum(ss, len1, len2, mul);
 	(mul[0] == 0) ? (s = 1) : (s = 0);
 	for (i = s; i < len1 + len2; i++)
