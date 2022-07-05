@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * rowmultiply - multiplay  two numbers and put the result into 2d array.
+ * rowmultiply - multiplay two numbers and put the result into 2d array.
+ * @arr: aray element
  * @row: array row
  * @column: array column
  * @arg1: frist number
@@ -13,14 +14,14 @@
 
 int *rowmultiply(int **arr, int row, int column, char *arg1, char *arg2)
 {
-	int i, j, g = 0, r, c;
+	int i, j, g = 0, r, c, f, l;
 
 	for (i = row - 1, g = 0, r = 0, c = column; i >= 0; i--)
 	{
 		for (j = column - 1; j >= 0; j--)
 		{
-			int f = ((arg1[i] - '0') * (arg2[j] - '0')) + g;
-			int l = f % 10;
+			f = ((arg1[i] - '0') * (arg2[j] - '0')) + g;
+			l = f % 10;
 
 			if (f > 9)
 			{
@@ -56,7 +57,7 @@ int *rowmultiply(int **arr, int row, int column, char *arg1, char *arg2)
 
 int *rowsum(int **arr2, int rw, int col, int *result)
 {
-	int i, j, k,  sum, z, p = 0;
+	int i, j, k, g, v, t, sum, z, p = 0;
 
 	for (z = (rw + col - 1), k = 0, i = 0, j = col, sum = 0; z >= 0; z--)
 	{
@@ -65,7 +66,7 @@ int *rowsum(int **arr2, int rw, int col, int *result)
 			i++;
 			j = 0;
 		}
-		int v = i, t = j;
+		v = i, t = j;
 
 		while (v < rw && t <= col)
 		{
@@ -81,7 +82,7 @@ int *rowsum(int **arr2, int rw, int col, int *result)
 			i = 0;
 			j--;
 		}
-		int g = sum % 10;
+		g = sum % 10;
 
 		if (sum > 9)
 		{
@@ -110,30 +111,41 @@ int main(int argc, char *argv[])
 	char *m, *n;
 	int **ss;
 	int *mul;
-	int i, j;
-	int len1 = strlen(argv[1]);
-	int len2 = strlen(argv[2]);
+	int i = 0, j = 0, len1, len2;
 
 	m = argv[1];
 	n = argv[2];
-	(void) argc;
-
-	if (argv[1] == NULL || argv[2] == NULL)
+	if (argc != 3)
 	{
 		printf("Error\n");
-		return (1);
+		exit(98);
 	}
-	else
+	while (m[i] != '\0')
 	{
-		ss = (int **)malloc(len1 * sizeof(int *));
-		for (i = 0; i < len1; i++)
-			ss[i] = (int *)malloc((len2 + 1) * sizeof(int));
-		rowmultiply(ss, len1, len2, m, n);
-		mul = (int *)malloc(sizeof(int) * (len1 + len2 + 1));
-		rowsum(ss, len1, len2, mul);
-		for (i = 0; i < len1 + len2; i++)
-			printf("%d", mul[i]);
-		printf("\n");
+		if (m[i] > '9' || m[i] < '0')
+		{	printf("Error\n");
+			exit(98);
+		}
+		i++;
 	}
+	while (n[j] != '\0')
+	{
+		if (n[i] > '9' || n[j] < '0')
+		{	printf("Error\n");
+			exit(98);
+		}
+		j++;
+	}
+	len1 = strlen(argv[1]);
+	len2 = strlen(argv[2]);
+	ss = (int **)malloc(len1 * sizeof(int *));
+	for (i = 0; i < len1; i++)
+		ss[i] = (int *)malloc((len2 + 1) * sizeof(int));
+	rowmultiply(ss, len1, len2, m, n);
+	mul = (int *)malloc(sizeof(int) * (len1 + len2 + 1));
+	rowsum(ss, len1, len2, mul);
+	for (i = 0; i < len1 + len2; i++)
+		printf("%d", mul[i]);
+	printf("\n");
 	return (0);
 }
