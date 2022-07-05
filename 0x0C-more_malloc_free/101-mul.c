@@ -109,18 +109,18 @@ int *rowsum(int **arr2, int rw, int col, int *result)
 int main(int argc, char *argv[])
 {
 	char *m, *n;
-	int **ss;
-	int *mul;
-	int i = 0, j = 0, len1, len2;
+	int **ss, *mul, i = 0, j = 0, len1, len2, s;
 
 	m = argv[1];
 	n = argv[2];
-	if (argc != 3)
+	if (argv[0] == NULL || argv[2] == NULL || argc > 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	while (m[i] != '\0')
+	len1 = strlen(argv[1]);
+	len2 = strlen(argv[2]);
+	while (i < len1)
 	{
 		if (m[i] > '9' || m[i] < '0')
 		{	printf("Error\n");
@@ -128,23 +128,22 @@ int main(int argc, char *argv[])
 		}
 		i++;
 	}
-	while (n[j] != '\0')
+	while (j < len2)
 	{
-		if (n[i] > '9' || n[j] < '0')
+		if (n[j] > '9' || n[j] < '0')
 		{	printf("Error\n");
 			exit(98);
 		}
 		j++;
 	}
-	len1 = strlen(argv[1]);
-	len2 = strlen(argv[2]);
 	ss = (int **)malloc(len1 * sizeof(int *));
 	for (i = 0; i < len1; i++)
 		ss[i] = (int *)malloc((len2 + 1) * sizeof(int));
 	rowmultiply(ss, len1, len2, m, n);
 	mul = (int *)malloc(sizeof(int) * (len1 + len2 + 1));
 	rowsum(ss, len1, len2, mul);
-	for (i = 0; i < len1 + len2; i++)
+	(mul[0] == 0) ? (s = 1) : (s = 0);
+	for (i = s; i < len1 + len2; i++)
 		printf("%d", mul[i]);
 	printf("\n");
 	return (0);
