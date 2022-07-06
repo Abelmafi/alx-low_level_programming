@@ -6,7 +6,7 @@
  * @size: array size
  * @cmp: pointer 
  *
- * Return: The index of the first element it does not return 0, or -1 
+ * Return: The index of the first element it does not return 0, or -1
  * or size is negative
  */
 int int_index(int *array, int size, int (*cmp)(int))
