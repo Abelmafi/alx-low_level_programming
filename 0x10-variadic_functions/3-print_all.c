@@ -9,43 +9,43 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	int i = 0, j = 0, counter = 0, k;
-	float f;
-	char d, *str;
-	const char * const c = format;
+	unsigned int j = 0, bgn = 0;
+	char *str;
 
 	va_start(ap, format);
-	while (c[i] != '\0')
-	{
-	if (c[i] == 'c' || c[i] == 'i' || c[i] == 'f' || c[i] == 's')
-		counter++;
-	i++;
-	}
-	while (j <= counter)
+	while (format && format[j] != '\0')
 	{
 		switch (format[j])
-		{
-			case 'c':
-				d = va_arg(ap, int);
-				printf("%c", d);
-				break;
-			case 'i':
-				k = va_arg(ap, int);
-				printf("%d", k);
-				break;
-			case 'f':
-				f = va_arg(ap, double);
-				printf("%f", f);
-				break;
-			case 's':
-				str = va_arg(ap, char*);
-				printf("%s", str);
-				break;
-			case '\0':
-				str = va_arg(ap, char*);
-				printf("%p", str);
-				break;
-		}	j++;
-	}	printf("\n");
+		{ case 'c':
+			switch (bgn)
+			{ case 1: printf(", ");	}
+			bgn = 1;
+			printf("%c", va_arg(ap, int));
+			break;
+		case 'i':
+			switch (bgn)
+			{ case 1: printf(", "); }
+			bgn = 1;
+			printf("%i", va_arg(ap, int));
+			break;
+		case 'f':
+			switch (bgn)
+			{ case 1: printf(", "); }
+			bgn = 1;
+			printf("%f", va_arg(ap, double));
+			break;
+		case's':
+			switch (bgn)
+			{ case 1: printf(", "); }
+			bgn = 1;
+			str = va_arg(ap, char*);
+			if (str)
+			{ printf("%s", str);
+			break; }
+			printf("%p", str);
+			break; }
+		j++;
+	}
+	printf("\n");
 	va_end(ap);
 }
