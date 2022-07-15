@@ -1,56 +1,47 @@
 #include "lists.h"
 /**
   * _strlen - string length
-  * @s: input char
+  * @s: string
   * Return: string length
-**/
-int _strlen(const char *st)
+  */
+int _strlen(const char *s)
 {
-	int i = 0;
+	int i;
 
-	while (st[i] != '\0')
-	{
-		i++;
-	}
+	for (i = 0; s[i]; i++)
+		;
 	return (i);
 }
 /**
- * add_node_end - adds new nodes to the end of the list.
- * @head: new head adress
- * @str: string to add
- * Return: head
- */
+  * add_node - add new nodes to the list
+  * @head: current place in the list
+  * @str: string to add to the head
+  * Return: pointer to current position in list
+  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_node;
-	list_t *aux;
+	int i, len;
+	char *content;
+	list_t *new;
 
-	aux = *head;
-	if (*head)
+	if (str == NULL || head == NULL)
+		return (NULL);
+	len = _strlen(str);
+	new = *head;
+	content = malloc((len + 1) * sizeof(char));
+	if (content == NULL)
+		return (NULL);
+	for (i = 0; str[i]; i++)
+		content[i] = str[i];
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
 	{
-		while (aux->next)
-		{
-		aux = aux->next;
-		}
+		free(content);
+		return (NULL);
 	}
-	new_node = malloc(sizeof(list_t));
-	if (new_node == NULL)
-	{
-		printf("Error\n");
-		return (0);
-	}
-	new_node->str = strdup(str);
-	if (new_node->str == NULL)
-	{
-		printf("Error\n");
-		free(new_node);
-		return (0);
-	}
-	new_node->len = _strlen(str);
-	new_node->next = NULL;
-	if (aux)
-	aux->next = new_node;
-	else
-	*head = new_node;
-	return (new_node);
+	new->str = content;
+	new->len = len;
+	new->next = *head;
+	*head = new;
+	return (new);
 }
