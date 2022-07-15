@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
   * _strlen -  string length
-  * @s: input char
+  * @sv: input char
   * Return: string length
 **/
 int _strlen(const char *sv)
