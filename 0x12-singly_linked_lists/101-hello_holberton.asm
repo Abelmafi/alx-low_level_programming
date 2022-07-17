@@ -17,6 +17,6 @@ main:                           ; the program label for the entry point
 
         pop     rbp             ; restore stack
 
-        mov     rax,0           ; normal, no error, return value
+        mov     rax,1           ; normal, no error, return value
         ret                     ; return
 ~                                                                    
