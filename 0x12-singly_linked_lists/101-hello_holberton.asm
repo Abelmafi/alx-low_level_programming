@@ -1,22 +1,14 @@
-        extern  printf          ; the C function, to be called
+global    main
 
-        section .data           ; Data section, initialized variables
-msg:    db "Hello, Holberton", 0        ; C string needs 0
-fmt:    db "%s", 10, 0          ; The printf format, "\n",'0'
+	          section   .text
+main:	   mov       rax, 1	; system call for write
+	          mov       rdi, 1 ; file handle 1 is stdout
+	          mov       rsi, message ; address of string to output
+	          mov       rdx, 17	 ; number of bytes
+	          syscall		 ; invoke operating system to do the write
+	          mov       rax, 60	 ; system call for exit
+	          xor       rdi, rdi	 ; exit code 0
+	          syscall		 ; invoke operating system to exit
 
-        section .text           ; Code section.
-
-        global main             ; the standard gcc entry point
-main:                           ; the program label for the entry point
-        push    rbp             ; set up stack frame, must be alligned
-
-        mov     rdi,fmt
-        mov     rsi,msg
-        mov     rax,0           ; or can be  xor  rax,rax
-        call    printf          ; Call C function
-
-        pop     rbp             ; restore stack
-
-        mov     rax,1           ; normal, no error, return value
-        ret                     ; return
-~                                                                    
+	          section   .data
+message:	  db        "Hello, Holberton", 10, 0 ; note the newline at the end
