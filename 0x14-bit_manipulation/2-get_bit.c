@@ -1,26 +1,24 @@
 #include "main.h"
 /**
- * print_binary - print binary of number.
- * @n: an intiger to be converted to binary.
+ * get_bit - print binary of numberat given index.
+ * @index: index.
+ * @n: un intiger.
  *
- * Return: void.
+ * Return: int.
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i;
-	int k;
+	int i, a;
 
-        for (i = 1 << 31; i > 0; i *= 0.5)
-        {
-                if (n & i)
-                {
-                        k = 1;
-                }
-                if (k == 1)
-                {
-                        (n & i) ? _putchar('1') : _putchar('0');
-                }
-        }
-        }
+	if (n == '\0' || index == '\0' || index > (sizeof(n) * 8 - 1))
+		a = -1;
+	for (i = sizeof(n) * 8 - 1; i >= 0; i--)
+	{
+		if (i == index)
+		{
+			((n >> i) & 1) ? (a = 1) : (a = 0);
+		}
+	}
+	return (a);
 }
 
