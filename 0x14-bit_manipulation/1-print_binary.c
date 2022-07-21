@@ -3,7 +3,6 @@
  * print_binary - print binary of number.
  * @n: an intiger to be converted to binary.
  *
- * Return: void.
  */
 void print_binary(unsigned long int n)
 {
@@ -26,5 +25,3 @@ void print_binary(unsigned long int n)
 	}
 	}
 }
-
-
