@@ -13,15 +13,15 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 	else
 	{
-	for (i = 1 << (sezeof(n) - 1); i > 0; i *= 0.5)
+	for (i = sezeof(n) - 1; i >= 0; i--)
 	{
-		if (n & i)
+		if ((n >> i) & 1)
 		{
 			k = 1;
 		}
 		if (k == 1)
 		{
-			(n & i) ? _putchar('1') : _putchar('0');
+			((n >> i) & 1) ? _putchar('1') : _putchar('0');
 		}
 	}
 	}
