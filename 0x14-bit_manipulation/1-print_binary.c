@@ -6,13 +6,13 @@
  */
 void print_binary(unsigned long int n)
 {
-	int i, k = 0;
+	int i, k;
 
 	if (n == 0)
 		_putchar('0');
 	else
 	{
-	for (i = sizeof(n) - 1; i >= 0; i--)
+	for (k = 0, i = sizeof(n) - 1; i >= 0; i--)
 	{
 		if ((n >> i) & 1)
 		{
