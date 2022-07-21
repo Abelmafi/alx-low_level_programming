@@ -8,14 +8,14 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i;
-	int a;
+	unsigned int j;
+	int i, a;
 
 	if (n == '\0' || index == '\0' || index > (sizeof(n) * 8 - 1))
 		a = -1;
-	for (i = sizeof(n) * 8 - 1; i >= 0; i--)
+	for (i = j = sizeof(n) * 8 - 1; i >= 0; i--, j--)
 	{
-		if (i == index)
+		if (j == index)
 		{
 			((n >> i) & 1) ? (a = 1) : (a = 0);
 		}
