@@ -10,15 +10,15 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)
 		_putchar('0');
-	for (k = 0, i = sizeof(n) * 8 - 1; i >= 0; i--)
+	for (k = 0, i << (sizeof(n) * 8 - 1); i >= 0; i--)
 	{
-		if ((n >> i) & 1)
+		if (n & i)
 		{
 			k = 1;
 		}
 		if (k == 1)
 		{
-			((n >> i) & 1) ? _putchar('1') : _putchar('0');
+			(n & i) ? _putchar('1') : _putchar('0');
 		}
 	}
 }
