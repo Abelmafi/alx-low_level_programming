@@ -28,8 +28,6 @@ void print_buffer(char *b, int size)
 			{
 				if ((i + j) < size)
 					printf(".");
-				else
-					printf(" ");
 			}
 			else
 			{
