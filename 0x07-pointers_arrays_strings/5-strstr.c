@@ -8,11 +8,11 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j = 0, flag = 0;
+	int j = 0, flag = 0;
 
 	if (*needle == '\0')
 		return (NULL);
-	for (haystack; *haystack != '\0'; haystack++)
+	while (*haystack)
 	{
 		if (*haystack == needle[0])
 		{
@@ -33,6 +33,7 @@ char *_strstr(char *haystack, char *needle)
 		}
 		if (flag == 1)
 			break;
+		haystack++;
 	}
 	if (flag == 0)
 		return (NULL);
