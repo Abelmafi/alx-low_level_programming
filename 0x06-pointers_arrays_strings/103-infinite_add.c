@@ -13,7 +13,7 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int l = 0, size;
+	int l = 0;
 	int a = strlen(n1);
 	int b = strlen(n2);
 
