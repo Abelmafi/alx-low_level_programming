@@ -29,8 +29,8 @@ char *_strstr(char *haystack, char *needle)
 				}
 			}
 		}
-		else
-			continue;
+		if (flag == 1)
+			break;
 	}
 	if (flag == 0)
 		return (NULL);
