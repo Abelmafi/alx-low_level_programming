@@ -18,7 +18,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int b = strlen(n2);
 	int size;
 
-	size = ((a >= b) ? a : b);
+	size = ((a >= b) ? (a + 1) : (b + 1));
 	if (!*n1 && !*n2)
 	{
 		return (0);
@@ -38,7 +38,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 			if (n > 9)
 			{
-				r[size - 1] = (char)(m  + '0');
+				r[size - 1] = (char)(m + '0');
 				l = 1;
 			}
 			else
