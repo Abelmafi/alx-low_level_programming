@@ -13,12 +13,14 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int l = 0;
+	int l = 0, size, size1;
 	int a = strlen(n1);
 	int b = strlen(n2);
 
 	if (size_r < a + 1 || size_r < b + 1)
 		return (0);
+	(a >= b) ? (size = a + 1) : (size = b + 1);
+	size1 = size;
 	while (a > 0 || b > 0)
 	{
 		int f = (int)((a > 0) ? (n1[a - 1] - '0') : 0);
@@ -28,24 +30,24 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 		if (n > 9)
 		{
-			r[size_r - 1] = (char)(m + '0');
+			r[size - 1] = (char)(m + '0');
 			l = 1;
 		}
 		else
 		{
-			r[size_r - 1] = (char)(n + '0');
+			r[size - 1] = (char)(n + '0');
 			l = 0;
 		}
-		size_r--;
+		size--;
 		a--;
 		b--;
 	}
-	if (size_r <= 1 && l == 1)
+	if ((size_r - size1) < 1 && l == 1)
 		return (0);
-	if (size_r > 1 && l == 1)
+	if ((size_r - size1) >= 1 && l == 1)
 	{
-		r[size_r - 1] = 1 + '0';
-		size_r--;
+		r[size - 1] = 1 + '0';
+		size--;
 	}
-	return (r + size_r);
+	return (r + size);
 }
