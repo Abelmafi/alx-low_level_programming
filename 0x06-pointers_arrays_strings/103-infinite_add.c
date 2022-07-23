@@ -40,11 +40,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		a--;
 		b--;
 	}
-	if (size_r == 1 && l == 1)
+	if (size_r <= 1 && l == 1)
 		return (0);
 	if (size_r > 1 && l == 1)
+	{
 		r[size_r - 1] = 1 + '0';
-	if(size_r == 1 && l == 0)
-		size_r++;
-	return (r + size_r - 1);
+		size_r--;
+	}
+	return (r + size_r);
 }
