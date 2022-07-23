@@ -9,8 +9,7 @@
  */
 int _atoi(char *s)
 {
-	int i = 0, j = 0, k = 1, f = 1;
-	long int sum = 0;
+	int i = 0, j = 0, k = 1, f = 1, sum = 0;
 
 	while (s[i])
 	{
