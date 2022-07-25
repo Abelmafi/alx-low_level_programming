@@ -20,14 +20,13 @@ int cp_file(char *sourse, char *target)
 
 	fd1 = open(sourse, O_RDONLY);
 	fd2 = open(target, O_WRONLY | O_TRUNC | O_CREAT, 0664);
-	rd = read(fd1, buffer, 1024)
+	rd = read(fd1, buffer, 1024);
 	if (rd == -1)
 		return (98);
 	if (rd > 0)
 		wr = write(fd2, buffer, rd);
 	if (wr == -1)
 		return (98);
-	}
 	close(fd1);
 	close(fd2);
 	if (close(fd1) == -1)
