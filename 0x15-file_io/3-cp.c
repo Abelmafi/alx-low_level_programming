@@ -29,8 +29,16 @@ int cp_file(char *sourse, char *target)
 	if (wr == -1)
 		return (99);
 	}
-	if (close(fd1) == -1 || close(fd2) == -1)
+	if (close(fd1) == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", fd1);
 		return (100);
+	}
+	if (close(fd2) == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", fd2);
+		return (100);
+	}
 	return (1);
 }
 /**
