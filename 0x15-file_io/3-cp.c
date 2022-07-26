@@ -27,10 +27,10 @@ int cp_file(char *sourse, char *target)
 	if (rd > 0)
 		wr = write(fd2, buffer, rd);
 	if (wr == -1)
-		return (98);
+		return (99);
 	}
-	close(fd1);
-	close(fd2);
+	if (close(fd1) == -1 || close(fd2) == -1)
+		return (100);
 	return (1);
 }
 /**
