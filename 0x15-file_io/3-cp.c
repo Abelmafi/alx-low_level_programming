@@ -55,7 +55,7 @@ int main(int ac, char **av)
 	res = cp_file(av[1], av[2]);
 	if (res == 98)
 	{
-		dprintf(2, "Error: Can't read from file NAME_OF_THE_FILE");
+		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	if (res == 99)
