@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  * delete_dnodeint_at_index - delete liked list node at index
  * @head: linked list head pointer
