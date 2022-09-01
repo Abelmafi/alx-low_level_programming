@@ -1,9 +1,12 @@
 #include "lists.h"
+
 /**
  * insert_dnodeint_at_index - insert not at the index position
  * @h: linkedlist head pointer
+ * @idx: insertion index
+ * @n: node value
  *
- * Return: new linked list pointer;
+ * Return: new linked list pointer
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -16,7 +19,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		new->next = *h;
 		new->prev = NULL;
-		(*h)->prev = new;
+		if (*h->prev)
+			(*h)->prev = new;
 		*h = new;
 	}
 	idx--;
@@ -25,7 +29,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		current = current->next;
 		num++;
 	}
-	if (num != idx)
+	if (current == NULL)
 		return (NULL);
 	else
 	{
