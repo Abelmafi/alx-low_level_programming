@@ -6,20 +6,18 @@
  *
  * Return: 1 on success and -1 on failure.
  */
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index){
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
+{
 	dlistint_t *del_node = *head;
 	unsigned int n = 0;
 
-	if (*head == NULL)
+	if (!head || *head == NULL)
 		return (-1);
 	if (index == 0)
 	{
 		if (del_node->next != NULL)
-			*head = del_node->next;
-		else
-			*head = NULL;
-		free(del_node);
-		return (1);
+			del_node->next->prev = NULL
+		*head = del_node->next;
 	}
 	while (n < index && del_node)
 	{
@@ -34,8 +32,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index){
 			del_node->prev->next = del_node->next;
 		if (del_node->next != NULL)
 			del_node->next->prev = del_node->prev;
-		free(del_node);
 	}
+	free(del_node);
 	return (1);
 }
 
