@@ -7,7 +7,7 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *print = head, *fast = head, *slow = head;
+	const listint_t *fast = head, *slow = head;
 	int n = 0;
 
 	if (head == NULL)
@@ -18,19 +18,19 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		if (slow == fast)
 		{
-			while (print != fast)
-			{	printf("[%p] %d\n", (void *)print, print->n);
+			while (head != fast)
+			{	printf("[%p] %d\n", (void *)head, head->n);
 				n++;
-				print = print->next;
+				head = head->next;
 				fast = fast->next;	}
-			printf("[%p] %d\n", (void *)print, print->n);
-			print = print->next;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 			n++;
-			while (print != fast)
-			{	printf("[%p] %d\n", (void *)print, print->n);
+			while (head != fast)
+			{	printf("[%p] %d\n", (void *)head, head->n);
 				n++;
-				print = print->next;	}
-			printf("-> [%p] %d\n", (void *)print, print->n);
+				head = head->next;	}
+			printf("-> [%p] %d\n", (void *)head, head->n);
 			n++;
 			return (n);
 		}
@@ -39,34 +39,10 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	if (slow != fast)
 	{
-		print = head;
-		while (print)
-		{	printf("[%p] %d\n", (void *)print, print->n);
-			print = print->next;
+		while (head)
+		{	printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 			n++;	}
 	}
 	return (n);
 }
-/* METHOD - 2 */
-/**
- * size_t print_listint_safe(listint_t *head)
- * {
- *	listint_t *nex;
- *	listint_t *tmp;
- *
- *	tmp = malloc(sizeof(listint_t));
- *	if (tmp == NULL)
- *		return (0);
- *	while (head)
- *	{
- *		printf("%d\n", head->n);
- *		if (head->next == NULL)
- *			break;
- *		if (head->next == tmp)
- *			break;
- *		nex = head->next;
- *		head->next = tmp;
- *		head = nex;
- *	}
- *}
- */
