@@ -24,10 +24,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	new_node->key = key_2;
 	new_node->value = value2;
+	new_node->next = NULL;
 	index = key_index((unsigned char *)key, ht->size);
 	if (ht->array[index])
 		new_node->next = ht->array[index];
 	ht->array[index] = new_node;
-	free(new_node);
 	return (1);
 }
