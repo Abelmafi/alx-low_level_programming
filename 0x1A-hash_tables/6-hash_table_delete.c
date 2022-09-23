@@ -4,6 +4,8 @@
 /**
  * hash_table_delete - Deletes a hash table.
  * @ht: A pointer to a hash table.
+ *
+ * Return: always nothing.
  */
 void hash_table_delete(hash_table_t *ht)
 {
