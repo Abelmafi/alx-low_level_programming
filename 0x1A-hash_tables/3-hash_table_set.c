@@ -23,8 +23,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(ht->array[i]->key, key) == 0)
 		{
+			free(ht->array[i]->value);
 			ht->array[i]->value = new_value;
-			return 0;
+			return (1);
 		}
 	}
 	new_node = malloc(sizeof(hash_node_t));
