@@ -71,6 +71,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	if (!sort)
 	{
+		new_node->snext = NULL;
+		new_node->sprev = NULL;
 		ht->shead = new_node;
 		ht->stail = new_node;
 	}
