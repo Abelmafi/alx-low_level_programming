@@ -89,7 +89,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		if (sort)
 		{
 			new_node->snext = sort;
-			new_node->sprev = sort->sprev;
+			new_node->sprev = prev_node;
 			if (sort == ht->shead)
 			{
 				sort->sprev = new_node;
@@ -98,7 +98,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			else
 			{
 				sort->sprev = new_node;
-				sort->sprev->snext = new_node;
+				prev_node->snext = new_node;
 			}
 		}
 		else
