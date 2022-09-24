@@ -98,14 +98,14 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			else
 			{
 				sort->sprev = new_node;
-				prev_node->snext = new_node;
+				sort->sprev->snext = new_node;
 			}
 		}
 		else
 		{
-			prev_node->snext = new_node;
 			new_node->sprev = prev_node;
 			new_node->snext = NULL;
+			prev_node->snext = new_node;
 			ht->stail = new_node;
 		}
 	}
@@ -129,10 +129,13 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	index = key_index((unsigned char *)key, ht->size);
 	temp = ht->array[index];
 
-	while (temp != NULL && strcmp(temp->key, key) != 0)
-		temp = temp->snext;
-	
-	return ((temp == NULL) ? NULL : temp->value);
+	while (temp)
+	{
+		if (strcmp(temp->key, key) == 0)
+			return (temp->value);
+		temp = temp->next;
+	}
+	return (NULL);
 }
 
 /**
