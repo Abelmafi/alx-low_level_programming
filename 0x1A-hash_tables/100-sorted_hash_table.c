@@ -45,7 +45,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	shash_node_t *new_node, *tmp;
 	char *new_key = strdup(key), *new_value = strdup(value);
 
-	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+	if (ht == NULL || key == NULL || *key == '\0')
 		return (0);
 	index = key_index((unsigned char *)new_key, ht->size);
 	if (ht->array[index])
@@ -87,7 +87,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		tmp = ht->shead;
-		while (tmp->snext != NULL && strcmp(tmp->snext->key, key) < 0)
+		while (tmp->snext != NULL && strcmp(tmp->snext->key, key) <= 0)
 			tmp = tmp->snext;
 		new_node->sprev = tmp;
 		new_node->snext = tmp->snext;
