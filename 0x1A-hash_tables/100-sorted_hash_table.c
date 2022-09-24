@@ -76,7 +76,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		while (new_node->key[0] > sort->key[0])
+		while (strcmp(new_node->key, sort->key) > 0)
 		{
 			prev_node = sort;
 			sort = sort->snext;
