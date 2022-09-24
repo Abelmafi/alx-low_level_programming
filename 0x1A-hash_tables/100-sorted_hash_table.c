@@ -22,6 +22,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 	if (t->array == NULL)
 		return (NULL);
+
 	for (i = 0; i < t->size; i++)
 		t->array[i] = NULL;
 	t->shead = NULL;
@@ -78,7 +79,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		while (strcmp(new_node->key, sort->key) > 0)
+		while (strcmp(key, sort->key) > 0)
 		{
 			prev_node = sort;
 			sort = sort->snext;
@@ -128,13 +129,10 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	index = key_index((unsigned char *)key, ht->size);
 	temp = ht->array[index];
 
-	while (temp)
-	{
-		if (strcmp(temp->key, key) == 0)
-			return (temp->value);
-		temp = temp->next;
-	}
-	return (NULL);
+	while (temp != NULL && strcmp(temp->key, key) != 0)
+		temp = temp->snext;
+	
+	return ((temp == NULL) ? NULL : temp->value);
 }
 
 /**
