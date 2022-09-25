@@ -199,6 +199,40 @@ void shash_table_print_rev(const shash_table_t *ht)
  *
  * Return: always nothing.
  */
+#include "hash_tables.h"
+#include <stdlib.h>
+
+/**
+ * hash_table_delete - Deletes a hash table.
+ * @ht: A pointer to a hash table.
+ *
+ * Return: always nothing.
+ */
+void shash_table_delete(shash_table_t *ht)
+{
+	shash_table_t *head = ht;
+	shash_node_t *node, *tmp;
+	unsigned long int i;
+
+	for (i = 0; i < ht->size; i++)
+	{
+		if (ht->array[i] != NULL)
+		{
+			node = ht->array[i];
+			while (node != NULL)
+			{
+				tmp = node->next;
+				free(node->key);
+				free(node->value);
+				free(node);
+				node = tmp;
+			}
+		}
+	}
+	free(head->array);
+	free(head);
+}
+/*
 void shash_table_delete(shash_table_t *ht)
 {
 	shash_table_t *head = ht;
@@ -206,6 +240,9 @@ void shash_table_delete(shash_table_t *ht)
 
 	if (ht == NULL)
 		return;
+
+	for (i = 0; i < ht->size; i++)
+	{
 
 	node = ht->shead;
 	while (node)
@@ -220,4 +257,4 @@ void shash_table_delete(shash_table_t *ht)
 	head->stail = NULL;
 	free(head->array);
 	free(head);
-}
+}*/
