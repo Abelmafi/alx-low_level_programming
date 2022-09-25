@@ -19,7 +19,6 @@ shash_table_t *shash_table_create(unsigned long int size)
 		return (NULL);
 	t->size = size;
 	t->array = malloc(sizeof(shash_node_t *) * t->size);
-
 	if (t->array == NULL)
 		return (NULL);
 
@@ -152,7 +151,7 @@ void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *temp = ht->shead;
 
-	if (!ht)
+	if (!ht || !ht->shead)
 		return;
 	printf("{");
 	while (temp)
