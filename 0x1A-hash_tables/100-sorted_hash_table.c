@@ -174,7 +174,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *temp = ht->stail;
 
-	if (!ht)
+	if (!ht || !ht->stail)
 		return;
 	printf("{");
 	while (temp)
