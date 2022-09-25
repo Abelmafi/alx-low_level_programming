@@ -46,6 +46,9 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (0);
+	if (!new_key || !new_value)
+		return (0);
+
 	index = key_index((unsigned char *)new_key, ht->size);
 	if (ht->array[index])
 	{
@@ -62,7 +65,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	new_node = malloc(sizeof(shash_node_t));
 	if (!new_node)
+	{
+		free(new_key);
+		free(new_value);
 		return (0);
+	}
 
 	new_node->key = new_key;
 	new_node->value = new_value;
