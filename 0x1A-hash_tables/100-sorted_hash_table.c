@@ -210,7 +210,8 @@ void shash_table_delete(shash_table_t *ht)
 		free(node);
 		node = tmp;
 	}
-
+	head->shead = NULL;
+	head->stail = NULL;
 	free(head->array);
 	free(head);
 }
