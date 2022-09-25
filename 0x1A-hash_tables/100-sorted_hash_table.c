@@ -164,9 +164,9 @@ void shash_table_print(const shash_table_t *ht)
 	while (temp)
 	{
 		printf("'%s': '%s'", temp->key, temp->value);
-		if (temp->snext)
-			printf(", ");
 		temp = temp->snext;
+		if (temp)
+			printf(", ");
 	}
 	printf("}\n");
 }
@@ -187,23 +187,15 @@ void shash_table_print_rev(const shash_table_t *ht)
 	while (temp)
 	{
 		printf("'%s': '%s'", temp->key, temp->value);
-		if (temp->sprev)
-			printf(", ");
 		temp = temp->sprev;
+		if (temp)
+			printf(", ");
 	}
 	printf("}\n");
 }
-/**
- * shash_table_delete - Deletes a hash table.
- * @ht: A pointer to a hash table.
- *
- * Return: always nothing.
- */
-#include "hash_tables.h"
-#include <stdlib.h>
 
 /**
- * hash_table_delete - Deletes a hash table.
+ * shash_table_delete - Deletes a hash table.
  * @ht: A pointer to a hash table.
  *
  * Return: always nothing.
@@ -215,9 +207,6 @@ void shash_table_delete(shash_table_t *ht)
 
 	if (ht == NULL)
 		return;
-
-	for (i = 0; i < ht->size; i++)
-	{
 
 	node = ht->shead;
 	while (node)
