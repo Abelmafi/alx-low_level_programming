@@ -186,7 +186,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	if (!ht)
 		return;
 
-	temp = ht->htail;
+	temp = ht->stail;
 	printf("{");
 	while (temp)
 	{
@@ -206,12 +206,12 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-	shash_table_t *head = ht;
+	shash_table_t *head;
 	shash_node_t *node, *tmp;
 
 	if (ht == NULL)
 		return;
-
+	head = ht;
 	node = ht->shead;
 	while (node)
 	{
