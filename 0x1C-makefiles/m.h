@@ -1,5 +1,5 @@
-#ifndef _M_H
-#define _M_H
+#ifndef _M_H_
+#define _M_H_
 
 #include <stdlib.h>
 #include <stdio.h>
