@@ -10,5 +10,5 @@
 CC = gcc
 SRC = *.c
 
-all: ${SRC}
+all:
 	$(CC) $(SRC) -o school
