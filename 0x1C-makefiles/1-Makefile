@@ -8,7 +8,7 @@
 #    SRC: the .c files
 
 CC = gcc
-SRC = *.c
+SRC = $(wildcard *.c)
 
 all:
 	$(CC) $(SRC) -o school
