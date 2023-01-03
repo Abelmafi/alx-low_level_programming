@@ -14,7 +14,6 @@ size_t min(size_t a, size_t b)
 	else
 		return (b);
 }
-
 /**
  * jump_search - searches for a value in a sorted array of integers using
  * the Jump search algorithm.
@@ -32,25 +31,25 @@ int jump_search(int *array, size_t size, int value)
 
 	while (array[min(step, size)] < value)
 	{
-		printf("Value checked array[%ld] = [%ld]\n", prev, array[prev]);
+		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 		prev = step;
 		step += sqrt(size);
 		if (prev >= size)
 			break;
 	}
-	printf("Value checked array[%ld] = [%ld]\n", prev, array[prev]);
+	printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 	printf("Value found between indexes [%ld] ", prev);
 	printf("and [%ld]\n", step);
 	while (array[prev] < value)
 	{
-		printf("Value checked array[%ld] = [%ld]\n", prev, array[prev]);
+		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 		if (prev == min(step, size))
 			return (-1);
 		prev++;
 	}
 	if (array[prev] == value)
 	{
-		printf("Value checked array[%ld] = [%ld]\n", prev, array[prev]);
+		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 		return (prev);
 	}
 	return (-1);
