@@ -18,7 +18,8 @@ int interpolation(int *a, size_t lo, size_t hi, int x)
 		p = lo + (((double)(hi - lo) / (a[hi] - a[lo])) * (x - a[lo]));
 		if (p > hi)
 		{
-			printf("Value checked array[%ld] is out of range\n", p);
+			printf("Value checked ariray[%ld] is out of range", p);
+			printf("\n");
 			return (-1);
 		}
 		printf("Value checked array[%ld] = [%d]\n", p, a[p]);
@@ -32,14 +33,13 @@ int interpolation(int *a, size_t lo, size_t hi, int x)
 	return (-1);
 }
 /**
- * interpolation_search - searches for a value in a sorted array of integers using
- * the interpolation search algorithm.
+ * interpolation_search - searches for a value in a sorted array of integers
+ * using the interpolation search algorithm.
  * @array: is a pointer to the first element of the array to search in
  * @size: is the number of elements in array
  * @value: is the value to search for
  * Return: the index where value is located.
  */
-
 int interpolation_search(int *array, size_t size, int value)
 {
 	int index;
