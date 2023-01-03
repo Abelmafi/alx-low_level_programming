@@ -11,23 +11,33 @@
  */
 int binary_ssearch(int *array, int ans, int lo, int hi, int value)
 {
-	int mid, i;
+	int mid, mid_r, mid_l, i;
 
 	if (hi >= lo)
 	{
 		mid = lo + (hi - lo) / 2;
+		if (mid % 2 == 0)
+		{
+			mid_l = mid + 1;
+			mid_r = mid;
+		}
+		else
+		{
+			mid_l = mid;
+			mid_r = mid + 1;
+		}
 		printf("Searching in array:");
 		for (i = lo; i < hi; i++)
 			printf(" %d,", array[i]);
 		printf(" %d\n", array[i]);
 		if (array[mid] < value && array[mid])
-			return (binary_ssearch(array, ans, mid + 1, hi, value));
+			return (binary_ssearch(array, ans, mid_r + 1, hi, value));
 		if (array[mid] > value)
-			return (binary_ssearch(array, ans, lo, mid - 1, value));
+			return (binary_ssearch(array, ans, lo, mid_l - 1, value));
 		if (array[mid] == value)
 		{
 			ans = mid;
-			return (binary_ssearch(array, ans, lo, mid - 1, value));
+			return (binary_ssearch(array, ans, lo, mid_l - 1, value));
 		}
 	}
 	return (ans);
