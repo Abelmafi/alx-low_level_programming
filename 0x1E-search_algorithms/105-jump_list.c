@@ -27,7 +27,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	size_t step = sqrt(size), prev_index = 0, i;
 	listint_t *front, *prev;
 
-	if (!list)
+	if (!list || !list->n)
 		return (NULL);
 	front = prev = list;
 	for (i = 0; i < sqrt(size); i++)
