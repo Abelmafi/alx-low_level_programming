@@ -5,7 +5,8 @@
  * the binary search recursive algorithm.
  * @ans: index value.
  * @array: is a pointer to the first element of the array to search in
- * @size: is higher index of pos elements in array
+ * @lo: is lower index of pos elements in array
+ * @hi: is higher index of pos elements in array
  * @v: is the value to search for
  * Return: the index where value is located.
  */
@@ -46,8 +47,8 @@ int binary_ssearch(int *array, int ans, int lo, int hi, int v)
  * advanced_binary - searches for a value in a sorted array of integers using
  * the binary search recursive algorithm.
  * @array: is a pointer to the first element of the array to search in
- * @size: is higher index of pos elements in array
- * @value: is the value to search for
+ * @size: is higher index of pos elements in array.
+ * @value: is the value to search for.
  * Return: the index where value is located.
  */
 int advanced_binary(int *array, size_t size, int value)
