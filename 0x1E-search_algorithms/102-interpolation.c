@@ -18,7 +18,7 @@ int interpolation(int *a, size_t lo, size_t hi, int x)
 		p = lo + (((double)(hi - lo) / (a[hi] - a[lo])) * (x - a[lo]));
 		if (p > hi)
 		{
-			printf("Value checked ariray[%ld] is out of range\n", p);
+			printf("Value checked array[%ld] is out of range\n", p);
 			return (-1);
 		}
 		printf("Value checked array[%ld] = [%d]\n", p, a[p]);
