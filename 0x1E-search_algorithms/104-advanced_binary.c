@@ -6,10 +6,10 @@
  * @ans: index value.
  * @array: is a pointer to the first element of the array to search in
  * @size: is higher index of pos elements in array
- * @value: is the value to search for
+ * @v: is the value to search for
  * Return: the index where value is located.
  */
-int binary_ssearch(int *array, int ans, int lo, int hi, int value)
+int binary_ssearch(int *array, int ans, int lo, int hi, int v)
 {
 	int mid, mid_r, mid_l, i;
 
@@ -24,20 +24,20 @@ int binary_ssearch(int *array, int ans, int lo, int hi, int value)
 		else
 		{
 			mid_l = mid;
-			mid_r = mid + 1;
+			mid_r = mid;
 		}
 		printf("Searching in array:");
 		for (i = lo; i < hi; i++)
 			printf(" %d,", array[i]);
 		printf(" %d\n", array[i]);
-		if (array[mid] < value && array[mid])
-			return (binary_ssearch(array, ans, mid_r + 1, hi, value));
-		if (array[mid] > value)
-			return (binary_ssearch(array, ans, lo, mid_l - 1, value));
-		if (array[mid] == value)
+		if (array[mid] < v)
+			return (binary_ssearch(array, ans, mid_r + 1, hi, v));
+		if (array[mid] > v)
+			return (binary_ssearch(array, ans, lo, mid_l - 1, v));
+		if (array[mid] == v)
 		{
 			ans = mid;
-			return (binary_ssearch(array, ans, lo, mid_l - 1, value));
+			return (binary_ssearch(array, ans, lo, mid_l - 1, v));
 		}
 	}
 	return (ans);
