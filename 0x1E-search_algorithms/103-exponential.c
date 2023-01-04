@@ -10,14 +10,15 @@ size_t min(size_t a, size_t b)
 {
 	if (b > a)
 		return (a);
-        else
+	else
 		return (b);
 }
 /**
- * binary_search - searches for a value in a sorted array of integers using
+ * binary_ssearch - searches for a value in a sorted array of integers using
  * the binary search recursive algorithm.
  * @array: is a pointer to the first element of the array to search in
- * @size: is higher index of pos elements in array
+ * @lo: is lower index of pos elements in array
+ * @hi: is higher index of pos element in array
  * @value: is the value to search for
  * Return: the index where value is located.
  */
@@ -48,8 +49,8 @@ int binary_ssearch(int *array, int lo, int hi, int value)
 	return (-1);
 }
 /**
- * exponential_search - searches for a value in a sorted array of integers using
- * the exponential search recursive algorithm.
+ * exponential_search - searches for a value in a sorted array of integers
+ * using the exponential search recursive algorithm.
  * @array: is a pointer to the first element of the array to search in
  * @size: is higher index of pos elements in array
  * @value: is the value to search for

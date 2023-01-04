@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "search_algos.h"
 /**
- * binary_search - searches for a value in a sorted array of integers using
+ * binary_ssearch - searches for a value in a sorted array of integers using
  * the binary search recursive algorithm.
  * @ans: index value.
  * @array: is a pointer to the first element of the array to search in
@@ -17,16 +17,11 @@ int binary_ssearch(int *array, int ans, int lo, int hi, int v)
 	if (hi >= lo)
 	{
 		mid = lo + (hi - lo) / 2;
+		mid_r = mid;
 		if (mid % 2 == 0)
-		{
 			mid_l = mid + 1;
-			mid_r = mid;
-		}
 		else
-		{
 			mid_l = mid;
-			mid_r = mid;
-		}
 		printf("Searching in array:");
 		for (i = lo; i < hi; i++)
 			printf(" %d,", array[i]);
