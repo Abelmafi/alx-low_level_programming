@@ -1,4 +1,4 @@
-# ALX Low-Level Programming Repository
+# ALX Low-Level Programming
 
 <div style="background-color: #000; padding: 10px;">
   <img src="http://www.alxafrica.com/wp-content/uploads/2022/01/header-logo.png" alt="ALX Africa Logo">
