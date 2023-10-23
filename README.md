@@ -4,7 +4,9 @@
   <img src="http://www.alxafrica.com/wp-content/uploads/2022/01/header-logo.png" alt="ALX Africa Logo">
 </div>
 
-Welcome to the ALX Low-Level Programming Repository. This collection of subfolders contains exercises and projects to help you master low-level programming and the C language..
+Welcome to the ALX Low-Level Programming Repository! This repository is dedicated to the exercises and projects that form part of my journey as an ALX student in mastering low-level programming and the C language. 
+
+In this collection of subfolders, you'll find a diverse set of challenges and learning materials that will help you build a strong foundation in low-level programming. Each subfolder represents a different aspect of this fascinating domain.
 
 ## Subfolders
 
